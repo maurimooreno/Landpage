@@ -19,7 +19,8 @@
     "test:a11y": "playwright test --grep @a11y",
     "test:performance": "node scripts/run-lighthouse.mjs",
     "test": "playwright test",
-    "security": "npm audit --audit-level=high"
+    "security": "npm audit --audit-level=high",
+    "security:output": "node scripts/scan-static-output.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.4",

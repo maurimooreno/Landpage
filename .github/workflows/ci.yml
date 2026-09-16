@@ -95,10 +95,4 @@ jobs:
       - run: npm ci
       - run: npm run security
       - run: npm run build
-      - name: Reject likely secrets or personal payloads in static output
-        shell: bash
-        run: |
-          if grep -RIE "(BEGIN (RSA|OPENSSH) PRIVATE KEY|api[_-]?key[=:]|requestId.*@)" dist; then
-            echo "Potential secret or personal payload detected in dist"
-            exit 1
-          fi
+      - run: npm run security:output
