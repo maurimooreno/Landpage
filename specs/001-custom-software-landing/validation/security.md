@@ -10,5 +10,8 @@ Date: 2026-09-13.
   privacy-version rejection and server validation.
 - JSON-LD serialization escapes `<`; content and attributes originate from typed project data.
 - Confirmation requires an endpoint-validated receipt and stores only a one-use boolean session flag.
+- CI scans textual static output with bounded patterns for private keys, assigned API keys, and email
+  values serialized into request identifiers. The scanner avoids matching unrelated values across a
+  minified HTML line and passes on the final build.
 
 The endpoint controls cannot be operationally proven until T034 provisions the selected adapter.

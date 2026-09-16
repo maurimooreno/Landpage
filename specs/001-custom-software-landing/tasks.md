@@ -189,7 +189,7 @@ cross-cutting constitutional gate.
 - [X] T074 Apply the reviewer disposition as one consolidated fix or rebuild batch, recapture the same viewports, obtain the bounded confirmation verdict, and update `.impeccable/review/verdict.md`
 - [X] T075 Run the Impeccable documenter only after the final correction to record the shipped visual system and provenance in `DESIGN.md` and its generated sidecar
 - [X] T076 Query the ruleset configured by T010, verify its stable identifier, active `refs/heads/main` target, pull-request requirement, seven required checks, and absence of undocumented bypass, and append redacted closing evidence to `specs/001-custom-software-landing/validation/ci.md`
-- [ ] T077 After T076, trigger `.github/workflows/ci.yml` from an `001-custom-software-landing` pull request, introduce and then revert a controlled failing change to prove every required check blocks merge, and append redacted evidence to `specs/001-custom-software-landing/validation/ci.md`
+- [X] T077 After T076, trigger `.github/workflows/ci.yml` from an `001-custom-software-landing` pull request, introduce and then revert a controlled failing change to prove every required check blocks merge, and append redacted evidence to `specs/001-custom-software-landing/validation/ci.md`
 - [ ] T078 Execute every pre-deployment command and manual scenario in `specs/001-custom-software-landing/quickstart.md`, require all stories and constitutional release gates to pass, validate the configured production-audit workflow without requiring a live URL, and record MVP readiness to publish in `specs/001-custom-software-landing/validation/final.md`
 
 **Checkpoint**: The complete US1 + US2 + US3 MVP is ready for the approved manual deployment only
