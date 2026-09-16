@@ -1,0 +1,31 @@
+name: Production Lighthouse
+
+on:
+  schedule:
+    - cron: '23 9 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    env:
+      LIGHTHOUSE_TARGET_URL: ${{ vars.PRODUCTION_SITE_URL }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with: { node-version: 24, cache: npm }
+      - name: Require a public HTTPS target
+        shell: bash
+        run: |
+          case "$LIGHTHOUSE_TARGET_URL" in
+            https://*) ;;
+            *) echo "Set the non-secret PRODUCTION_SITE_URL repository variable to an HTTPS URL"; exit 1 ;;
+          esac
+      - run: npm ci
+      - run: npm run test:performance
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with: { name: production-lighthouse, path: .lighthouseci, retention-days: 90 }

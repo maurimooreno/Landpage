@@ -1,0 +1,67 @@
+---
+import { demoNotice, profile } from '../data/profile';
+import type { SeoMetadata } from '../data/types';
+import '../styles/global.css';
+
+interface Props {
+  metadata: SeoMetadata;
+}
+const { metadata } = Astro.props;
+const site = Astro.site ?? new URL('http://localhost:4321');
+const canonical = new URL(metadata.canonicalPath, site);
+const ogImage = metadata.imagePath ? new URL(metadata.imagePath, site) : undefined;
+const structuredData = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: profile.brand,
+  description: metadata.description,
+  areaServed: { '@type': 'Country', name: 'Argentina' },
+  email: profile.email,
+  url: new URL('/', site).href,
+  serviceType: ['Desarrollo de software a medida', 'Integraciones', 'Automatizaciones'],
+}).replaceAll('<', '\\u003c');
+---
+
+<!doctype html>
+<html lang="es-AR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={metadata.description} />
+    <meta name="theme-color" content="#edf0eb" />
+    <meta name="color-scheme" content="light" />
+    {metadata.noindex && <meta name="robots" content="noindex, nofollow" />}
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:title" content={metadata.title} />
+    <meta property="og:description" content={metadata.description} />
+    <meta property="og:url" content={canonical} />
+    {ogImage && <meta property="og:image" content={ogImage} />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>{metadata.title}</title>
+    <script type="application/ld+json" set:html={structuredData} is:inline></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">
+      Saltar al contenido
+    </a>
+    <aside class="demo-notice" aria-label="Aviso de demostración">
+      {demoNotice}
+    </aside>
+    <slot />
+  </body>
+</html>
+
+<style>
+  .demo-notice {
+    margin: 0;
+    padding: 0.45rem var(--page-gutter);
+    background: var(--color-ink);
+    color: #fff;
+    font-size: 0.83rem;
+    line-height: 1.4;
+    text-align: center;
+  }
+</style>

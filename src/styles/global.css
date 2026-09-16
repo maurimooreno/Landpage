@@ -1,0 +1,186 @@
+@import '@fontsource-variable/saira/wght.css';
+@import '@fontsource-variable/source-sans-3/wght.css';
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Saira Variable', 'Arial Narrow', sans-serif;
+  --font-body: 'Source Sans 3 Variable', sans-serif;
+  --color-paper: #edf0eb;
+  --color-paper-deep: #dfe5df;
+  --color-ink: #102720;
+  --color-ink-muted: #40564f;
+  --color-rule: #aab8b2;
+  --color-plan: #0b6684;
+  --color-plan-dark: #07475e;
+  --color-mark: #bd452d;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:root {
+  color-scheme: light;
+  font-family: var(--font-body);
+  font-synthesis: none;
+  --page-gutter: clamp(1.1rem, 4vw, 4.5rem);
+  --content-width: 92rem;
+  --line: color-mix(in srgb, var(--color-rule) 72%, transparent);
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+  background: var(--color-paper);
+}
+html {
+  scrollbar-color: var(--color-plan) var(--color-paper-deep);
+  scrollbar-width: thin;
+}
+::-webkit-scrollbar {
+  width: 0.75rem;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-paper-deep);
+}
+::-webkit-scrollbar-thumb {
+  border: 3px solid var(--color-paper-deep);
+  background: var(--color-plan);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-plan-dark);
+}
+body {
+  margin: 0;
+  min-width: 20rem;
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-size: clamp(1rem, 0.3vw + 0.94rem, 1.125rem);
+  line-height: 1.58;
+  text-rendering: optimizeLegibility;
+}
+body::before {
+  position: fixed;
+  z-index: -1;
+  inset: 0;
+  content: '';
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, rgb(16 39 32 / 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(16 39 32 / 0.045) 1px, transparent 1px);
+  background-size: 2rem 2rem;
+  mask-image: linear-gradient(to bottom, black 0, transparent 55rem);
+}
+::selection {
+  background: var(--color-plan);
+  color: white;
+}
+:focus-visible {
+  outline: 3px solid var(--color-mark);
+  outline-offset: 4px;
+}
+a {
+  color: inherit;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.22em;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+button,
+label,
+select,
+input[type='checkbox'],
+input[type='radio'] {
+  touch-action: manipulation;
+}
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  top: 0.75rem;
+  left: 0.75rem;
+  translate: 0 -180%;
+  padding: 0.7rem 1rem;
+  background: var(--color-ink);
+  color: white;
+  transition: translate 180ms var(--ease-out-expo);
+}
+.skip-link:focus {
+  translate: 0;
+}
+.shell {
+  width: min(100% - (var(--page-gutter) * 2), var(--content-width));
+  margin-inline: auto;
+}
+.section-frame {
+  border-top: 1px solid var(--line);
+  padding-block: clamp(4.5rem, 9vw, 9rem);
+}
+.technical-label {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.measure-rule {
+  height: 0.45rem;
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--color-rule) 0 1px,
+    transparent 1px 0.5rem
+  );
+  border-bottom: 1px solid var(--color-rule);
+}
+.field {
+  width: 100%;
+  min-height: 3.25rem;
+  border: 1px solid var(--color-rule);
+  border-radius: 0;
+  background: rgb(255 255 255 / 0.54);
+  color: var(--color-ink);
+  padding: 0.75rem 0.9rem;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+.field:hover {
+  border-color: var(--color-ink-muted);
+}
+.field:focus {
+  border-color: var(--color-plan);
+  box-shadow: 0 0 0 3px rgb(11 102 132 / 0.18);
+  outline: 0;
+}
+.field[aria-invalid='true'] {
+  border-color: var(--color-mark);
+}
+.field-error {
+  margin-block: 0.4rem 0;
+  color: #8f2f1e;
+  font-weight: 600;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+@media (forced-colors: active) {
+  :focus-visible {
+    outline-color: Highlight;
+  }
+  .field {
+    border: 1px solid CanvasText;
+  }
+}

@@ -1,0 +1,107 @@
+---
+import { navigation } from '../../data/navigation';
+import { profile } from '../../data/profile';
+---
+
+<header class="site-header">
+  <div class="shell header-inner">
+    <a class="brand" href="/" aria-label={`${profile.brand}, inicio`}>
+      <span>{profile.brand}</span>
+      <small>{profile.descriptor}</small>
+    </a>
+    <nav aria-label="Navegación principal" class="desktop-nav">
+      {navigation.map((item) => (
+        <a href={item.href}>{item.label}</a>
+      ))}
+    </nav>
+    <details class="mobile-nav">
+      <summary>Índice</summary>
+      <nav aria-label="Navegación móvil">
+        {navigation.map((item) => (
+          <a href={item.href}>{item.label}</a>
+        ))}
+      </nav>
+    </details>
+  </div>
+</header>
+<style>
+  .site-header {
+    position: sticky;
+    z-index: 20;
+    top: 0;
+    border-bottom: 1px solid var(--line);
+    background: rgb(237 240 235 / 0.94);
+    backdrop-filter: blur(10px);
+  }
+  .header-inner {
+    display: flex;
+    min-height: 4.5rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  .brand {
+    display: flex;
+    align-items: baseline;
+    gap: 0.7rem;
+    font-family: var(--font-display);
+    text-decoration: none;
+  }
+  .brand span {
+    font-size: 1.08rem;
+    font-weight: 720;
+  }
+  .brand small {
+    color: var(--color-ink-muted);
+    font-size: 0.78rem;
+  }
+  .desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, 2.5vw, 2.8rem);
+  }
+  nav a {
+    font-family: var(--font-display);
+    font-size: 0.87rem;
+    font-weight: 610;
+    text-decoration: none;
+  }
+  nav a:hover {
+    text-decoration: underline;
+  }
+  .mobile-nav {
+    display: none;
+    position: relative;
+  }
+  summary {
+    min-height: 2.75rem;
+    cursor: pointer;
+    align-content: center;
+    font-family: var(--font-display);
+    font-weight: 650;
+  }
+  @media (max-width: 47.99rem) {
+    .brand small,
+    .desktop-nav {
+      display: none;
+    }
+    .mobile-nav {
+      display: block;
+    }
+    .mobile-nav nav {
+      position: absolute;
+      top: calc(100% + 0.55rem);
+      right: 0;
+      display: grid;
+      min-width: 12rem;
+      border: 1px solid var(--color-ink);
+      background: var(--color-paper);
+    }
+    .mobile-nav nav a {
+      min-height: 3rem;
+      padding: 0.7rem 1rem;
+      border-bottom: 1px solid var(--line);
+      align-content: center;
+    }
+  }
+</style>

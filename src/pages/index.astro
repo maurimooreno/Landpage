@@ -1,0 +1,23 @@
+---
+import Footer from '../components/layout/Footer.astro';
+import Header from '../components/layout/Header.astro';
+import Contact from '../components/sections/Contact.astro';
+import Experience from '../components/sections/Experience.astro';
+import Hero from '../components/sections/Hero.astro';
+import Projects from '../components/sections/Projects.astro';
+import Services from '../components/sections/Services.astro';
+import { homeSeo } from '../data/seo';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout metadata={homeSeo}>
+  <Header />
+  <main id="contenido">
+    <Hero />
+    <Services />
+    <Experience />
+    <Projects />
+    <Contact />
+  </main>
+  <Footer />
+</BaseLayout>

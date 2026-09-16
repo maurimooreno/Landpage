@@ -1,0 +1,135 @@
+---
+import type { CollectionEntry } from 'astro:content';
+interface Props {
+  project: CollectionEntry<'projects'>;
+  index: number;
+}
+const { project, index } = Astro.props;
+const { data } = project;
+---
+
+<article class="project-summary">
+  <header>
+    <span class="technical-label">Lámina P-{String(index + 1).padStart(2, '0')}</span>
+    <span class="demo-tag">Caso demostrativo</span>
+    <h3>{data.title}</h3>
+    <p>{data.sector}</p>
+  </header>
+  <dl>
+    <div>
+      <dt>Problema</dt>
+      <dd>{data.problem}</dd>
+    </div>
+    <div>
+      <dt>Aporte</dt>
+      <dd>{data.contribution}</dd>
+    </div>
+    <div>
+      <dt>Solución</dt>
+      <dd>{data.solution}</dd>
+    </div>
+    <div class="result">
+      <dt>Resultado ilustrativo</dt>
+      <dd>{data.outcome}</dd>
+    </div>
+  </dl>
+  <footer>
+    <span class="technical-label">Tecnologías</span>
+    <ul aria-label="Tecnologías">
+      {data.technologies.map((technology) => (
+        <li>{technology}</li>
+      ))}
+    </ul>
+    {data.confidential && <span>Datos anonimizados</span>}
+  </footer>
+</article>
+<style>
+  .project-summary {
+    display: grid;
+    grid-template-columns: 0.78fr 1.22fr;
+    gap: clamp(2rem, 7vw, 8rem);
+    border-top: 1px solid var(--color-ink);
+    padding-block: clamp(2.5rem, 5vw, 5rem);
+  }
+  header {
+    align-self: start;
+  }
+  .demo-tag {
+    display: inline-block;
+    margin-left: 0.8rem;
+    border: 1px solid var(--color-mark);
+    padding: 0.15rem 0.4rem;
+    color: #8f2f1e;
+    font-size: 0.75rem;
+    font-weight: 700;
+  }
+  h3 {
+    max-width: 18ch;
+    margin: 1.2rem 0 0.6rem;
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 4rem);
+    font-weight: 580;
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+  header p {
+    color: var(--color-ink-muted);
+  }
+  dl {
+    margin: 0;
+  }
+  dl > div {
+    display: grid;
+    grid-template-columns: 8rem 1fr;
+    gap: 1rem;
+    border-bottom: 1px solid var(--line);
+    padding-block: 1.2rem;
+  }
+  dt {
+    font-family: var(--font-display);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  dd {
+    max-width: 60ch;
+    margin: 0;
+    color: var(--color-ink-muted);
+  }
+  .result dd {
+    color: var(--color-plan-dark);
+    font-weight: 620;
+  }
+  footer {
+    grid-column: 2;
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 0.8rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    color: var(--color-ink-muted);
+  }
+  @media (max-width: 47.99rem) {
+    .project-summary {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    dl > div {
+      grid-template-columns: 1fr;
+      gap: 0.35rem;
+    }
+    footer {
+      grid-column: 1;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+</style>

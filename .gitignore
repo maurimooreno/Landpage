@@ -1,0 +1,35 @@
+# Dependencies and generated output
+node_modules/
+.npm-cache/
+.astro/
+dist/
+coverage/
+playwright-report/
+test-results/
+.lighthouseci/
+
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+*.log
+
+# Local design tooling
+.impeccable-bin/
+.impeccable/live/
+.impeccable/review/
+.impeccable/build/
+.impeccable/mocks/
+
+# Local audits and temporary fixtures
+lhci_reports/
+blob-report/
+*.local.json
+
+# Editors and operating systems
+.DS_Store
+Thumbs.db
+*.tmp
+*.swp
+.idea/
+.vscode/

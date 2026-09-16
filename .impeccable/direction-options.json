@@ -1,0 +1,106 @@
+{
+  "title": "Elegí la dirección visual",
+  "question": "La landing puede tratar cada proyecto como una intervención técnica verificable. Elegí esta dirección, una alternativa o pedí una nueva selección.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Plano de intervención",
+      "kicker": "THE ROLL",
+      "lineage": "planos técnicos, papel vegetal y marcas de revisión",
+      "thesis": "El proceso del cliente se vuelve una lámina legible: fricción, intervención y resultado en capas.",
+      "palette": ["#F1EBDD", "#17231F", "#176B5B", "#C84A32"],
+      "materials": ["papel técnico", "tinta de revisión", "retícula de medición"],
+      "viewport": "Una gran línea de proceso cruza la portada; tres marcas señalan dónde el software elimina fricción y la acción final queda alineada con la solución.",
+      "risk": "Puede sentirse demasiado técnico si las anotaciones desplazan la propuesta de valor.",
+      "raised": [
+        {"from": "Terminal wayfinding", "raise": "Cada cruce de la página muestra una única decisión siguiente."},
+        {"from": "Sticker album", "raise": "La evidencia demostrativa y los datos aún faltantes se identifican sin disimulo."},
+        {"from": "Cloud edge", "raise": "El color se reserva para intervención, estado y acción; el campo de lectura permanece calmo."},
+        {"from": "Cutting bench", "raise": "La secuencia encadena etapas con un ritmo inequívoco y estados visibles."}
+      ],
+      "comp": ".impeccable/mocks/decision/assigned.webp"
+    },
+    {
+      "id": "model-pick",
+      "label": "Cuaderno de diagnóstico",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "cuadernos de campo y notas de una visita operativa",
+      "thesis": "La página documenta cómo una conversación técnica convierte observaciones reales en decisiones de software.",
+      "palette": ["#F5F0E6", "#202421", "#1D5D50", "#A6482F"],
+      "materials": ["papel pautado", "grafito", "sellos de estado"],
+      "viewport": "Una observación manuscrita encabeza un diagnóstico estructurado que desemboca en una propuesta de contacto.",
+      "risk": "Es la dirección familiar para una consultoría y exige mucha precisión para no parecer una plantilla editorial.",
+      "comp": ".impeccable/mocks/decision/model-pick.webp"
+    },
+    {
+      "id": "challenger-wayfinding",
+      "label": "Señalética de terminal",
+      "verdict": "competitive",
+      "lineage": "sistemas internacionales de orientación aeroportuaria",
+      "thesis": "Cada sección funciona como una decisión señalizada hacia el próximo paso del proyecto.",
+      "palette": ["#F5C400", "#111111", "#FFFFFF"],
+      "materials": ["panel suspendido", "pictograma", "banda direccional"],
+      "viewport": "Una banda amarilla monumental dirige desde el problema empresarial hacia servicios, evidencia y contacto.",
+      "case": "Supera en claridad de navegación, pero identifica menos el trabajo de diagnóstico y construcción a medida.",
+      "risk": "Puede reducir una relación consultiva a una secuencia demasiado impersonal.",
+      "comp": ".impeccable/mocks/decision/challenger-wayfinding.webp",
+      "hero": "https://impeccable.style/worlds/cards/wayfinding-cartography-signage-terminal-yellow-wayfinding-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/wayfinding-cartography-signage-terminal-yellow-wayfinding.webp"
+    },
+    {
+      "id": "challenger-stickers",
+      "label": "Álbum de soluciones",
+      "verdict": "declined",
+      "lineage": "álbumes de figuritas con posiciones numeradas",
+      "thesis": "Los sistemas resueltos ocupan posiciones y las capacidades aún no demostradas permanecen explícitamente vacías.",
+      "palette": ["#ECE5D5", "#252525", "#55705D"],
+      "materials": ["papel mate", "contorno fantasma", "etiqueta adherida"],
+      "viewport": "Una grilla de problemas muestra qué intervención corresponde a cada posición.",
+      "case": "La ausencia es honesta, pero el tono coleccionable resta confianza empresarial.",
+      "kept": "Los datos demostrativos nunca se presentan como evidencia real.",
+      "risk": "Puede percibirse lúdico para una decisión de inversión.",
+      "hero": "https://impeccable.style/worlds/cards/pop-culture-shelf-sticker-album-spread-hero.webp"
+    },
+    {
+      "id": "challenger-cloud",
+      "label": "Borde iridiscente",
+      "verdict": "declined",
+      "lineage": "observación científica de difracción en nubes",
+      "thesis": "Un campo neutral concentra el color únicamente donde aparece información decisiva.",
+      "palette": ["#FAFAF4", "#39464C", "#86BDAA", "#B47898"],
+      "materials": ["campo blanco", "banda espectral", "nota de observación"],
+      "viewport": "La propuesta ocupa un amplio campo calmo y una franja de color señala el cambio producido.",
+      "case": "La lectura es excelente, pero la metáfora no pertenece al mundo de las operaciones empresariales.",
+      "kept": "El acento cromático queda confinado a estados y acciones.",
+      "risk": "Puede parecer una publicación científica ajena al servicio.",
+      "hero": "https://impeccable.style/worlds/cards/clouds-storms-auroras-iridescent-cloud-edge-hero.webp"
+    },
+    {
+      "id": "challenger-cutting-bench",
+      "label": "Mesa de montaje",
+      "verdict": "declined",
+      "lineage": "banco físico de edición cinematográfica",
+      "thesis": "Una cinta continua enlaza problema, decisión, construcción y entrega con marcas de estado.",
+      "palette": ["#111111", "#E66A2C", "#F6F2E8"],
+      "materials": ["película perforada", "cinta de marca", "ventana de trabajo"],
+      "viewport": "La portada se recorre como una tira que detiene cada fase en un fotograma preciso.",
+      "case": "La secuencia es fuerte, pero la edición de cine desplaza el vocabulario de software empresarial.",
+      "kept": "Las etapas y estados mantienen un ritmo visible en toda la página.",
+      "risk": "Puede sentirse temática y distraer del mensaje comercial.",
+      "hero": "https://impeccable.style/worlds/cards/operate-a-cutting-bench-select-rail-hero.webp"
+    }
+  ],
+  "reroll": {"registers": ["safer", "bolder"]},
+  "buildPath": {"value": "code", "toggle": true},
+  "canon": true,
+  "canonCard": {
+    "label": "Estándar de la categoría",
+    "thesis": "Una landing tecnológica convencional ejecutada con precisión.",
+    "palette": ["#FFFFFF", "#111827", "#2563EB"],
+    "materials": ["retícula limpia", "capturas de producto"],
+    "viewport": "Titular, lista de servicios, casos en tarjetas y llamada a contacto.",
+    "risk": "Resulta familiar, pero también intercambiable con competidores.",
+    "comp": ".impeccable/mocks/decision/canon.webp"
+  },
+  "steer": true
+}
