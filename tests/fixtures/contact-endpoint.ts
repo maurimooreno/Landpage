@@ -10,8 +10,10 @@ export type ContactMode =
   | 'failure'
   | 'timeout';
 
+const contactEndpoint = process.env.PUBLIC_CONTACT_ENDPOINT ?? 'https://forms.example.test/contact';
+
 export async function mockContactEndpoint(page: Page, mode: ContactMode = 'success') {
-  await page.route('https://forms.example.com/contact', async (route: Route) => {
+  await page.route(contactEndpoint, async (route: Route) => {
     if (mode === 'timeout') {
       await new Promise((resolve) => setTimeout(resolve, 250));
       return route.abort('timedout');

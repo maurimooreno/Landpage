@@ -1,6 +1,8 @@
 import { expect, test } from '@playwright/test';
 import { fillValidContact, mockContactEndpoint } from '../fixtures/contact-endpoint';
 
+const contactEndpoint = process.env.PUBLIC_CONTACT_ENDPOINT ?? 'https://forms.example.test/contact';
+
 test('muestra sólo el dato requerido por el canal', async ({ page }) => {
   await page.goto('/#contacto');
   await expect(page.getByLabel('Teléfono')).toBeVisible();
@@ -12,7 +14,7 @@ test('muestra sólo el dato requerido por el canal', async ({ page }) => {
 
 test('envía el payload exacto y confirma sólo una aceptación autoritativa', async ({ page }) => {
   let payload: unknown;
-  await page.route('https://forms.example.com/contact', async (route) => {
+  await page.route(contactEndpoint, async (route) => {
     payload = route.request().postDataJSON();
     await route.fulfill({
       status: 202,

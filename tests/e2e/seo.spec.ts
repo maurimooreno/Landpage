@@ -1,5 +1,7 @@
 import { expect, test } from '@playwright/test';
 
+const siteOrigin = new URL(process.env.PUBLIC_SITE_URL ?? 'https://example.test').origin;
+
 test('landing publica metadata, canonical y datos estructurados', async ({ page }) => {
   await page.goto('/');
   await expect(page).toHaveTitle(/Software a medida para PyMEs/);
@@ -12,10 +14,7 @@ test('landing publica metadata, canonical y datos estructurados', async ({ page 
     'content',
     /Software a medida/,
   );
-  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute(
-    'href',
-    'https://example.com/',
-  );
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', `${siteOrigin}/`);
   const jsonLd = JSON.parse(
     (await page.locator('script[type="application/ld+json"]').textContent()) ?? '{}',
   );
@@ -24,11 +23,11 @@ test('landing publica metadata, canonical y datos estructurados', async ({ page 
 
 test('robots referencia el sitemap y el sitemap excluye confirmación', async ({ request }) => {
   const robots = await (await request.get('/robots.txt')).text();
-  expect(robots).toContain('Sitemap: https://example.com/sitemap-index.xml');
+  expect(robots).toContain(`Sitemap: ${siteOrigin}/sitemap-index.xml`);
   const sitemapIndex = await (await request.get('/sitemap-index.xml')).text();
   expect(sitemapIndex).toContain('sitemap-0.xml');
   const sitemap = await (await request.get('/sitemap-0.xml')).text();
-  expect(sitemap).toContain('https://example.com/privacidad/');
+  expect(sitemap).toContain(`${siteOrigin}/privacidad/`);
   expect(sitemap).not.toContain('/contacto/gracias/');
 });
 
