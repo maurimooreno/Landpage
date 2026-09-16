@@ -1,0 +1,23 @@
+---
+import { getCollection } from 'astro:content';
+import ProjectSummary from '../ui/ProjectSummary.astro';
+import SectionHeading from '../ui/SectionHeading.astro';
+const projects = (await getCollection('projects', ({ data }) => data.approved)).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+---
+
+<section id="proyectos" class="section-frame" aria-labelledby="projects-title">
+  <div class="shell">
+    <SectionHeading
+      title="Casos para revisar el método, no para inflar una historia."
+      description="Estos tres ejemplos son sintéticos. Muestran el nivel de detalle con el que se presentarán proyectos reales: contexto, problema, aporte, solución y resultado."
+      align="wide"
+    />
+    <div>
+      {projects.map((project, index) => (
+        <ProjectSummary project={project} index={index} />
+      ))}
+    </div>
+  </div>
+</section>

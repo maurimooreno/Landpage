@@ -51,14 +51,14 @@ document shell required by every story.
 **CRITICAL**: No user-story UI begins until this phase passes. Contact-provider work is deliberately
 excluded and begins inside US2.
 
-- [ ] T011 Provision the Impeccable engine with user approval if required, run context once, complete product initialization, and record durable product truth in `PRODUCT.md`
-- [ ] T012 Inventory owner-verified identity, company email, experience, project evidence, permissions, assets, and prohibited claims; stop release work if required factual content is missing in `PRODUCT.md`
-- [ ] T013 Run Impeccable `concept-seed --scope direction --mode persuade`, obtain the human direction choice, persist `buildPath` in `.impeccable/config.json`, and write the six-block surface brief for `src/pages/index.astro`
-- [ ] T014 Load the Impeccable craft-floor immediately before the first UI edit, then translate the approved direction contract into accessible Tailwind typography, color, focus, spacing, motion, and reduced-motion tokens in `src/styles/global.css`
-- [ ] T015 [P] Define strict shared content, SEO, navigation, and contact-domain types without framework state in `src/data/types.ts`
-- [ ] T016 Implement the semantic document shell from T015 with language, skip link, metadata contract, canonical handling, and safe JSON-LD serialization in `src/layouts/BaseLayout.astro`
-- [ ] T017 [P] Add source, environment, build, test-result, Lighthouse, and local Impeccable ignore rules without hiding shipping assets in `.gitignore`
-- [ ] T018 Run install, type, lint, format, build, and empty-suite smoke checks and record the shared foundation result in `specs/001-custom-software-landing/validation/foundation.md`
+- [X] T011 Provision the Impeccable engine with user approval if required, run context once, complete product initialization, and record durable product truth in `PRODUCT.md`
+- [X] T012 Inventory owner-verified identity, company email, experience, project evidence, permissions, assets, and prohibited claims; stop release work if required factual content is missing in `PRODUCT.md`
+- [X] T013 Run Impeccable `concept-seed --scope direction --mode persuade`, obtain the human direction choice, persist `buildPath` in `.impeccable/config.json`, and write the six-block surface brief for `src/pages/index.astro`
+- [X] T014 Load the Impeccable craft-floor immediately before the first UI edit, then translate the approved direction contract into accessible Tailwind typography, color, focus, spacing, motion, and reduced-motion tokens in `src/styles/global.css`
+- [X] T015 [P] Define strict shared content, SEO, navigation, and contact-domain types without framework state in `src/data/types.ts`
+- [X] T016 Implement the semantic document shell from T015 with language, skip link, metadata contract, canonical handling, and safe JSON-LD serialization in `src/layouts/BaseLayout.astro`
+- [X] T017 [P] Add source, environment, build, test-result, Lighthouse, and local Impeccable ignore rules without hiding shipping assets in `.gitignore`
+- [X] T018 Run install, type, lint, format, build, and empty-suite smoke checks and record the shared foundation result in `specs/001-custom-software-landing/validation/foundation.md`
 
 **Checkpoint**: Shared visual, content, type, and layout contracts compile; US1, US2, and US3 may begin
 independent development.
@@ -76,22 +76,22 @@ solution types, and the recommended next step without assistance.
 
 > Write these tests first and confirm they fail for the expected missing behavior.
 
-- [ ] T019 [P] [US1] Write failing Playwright tests for first-viewport offer, primary email action, service/problem comprehension, semantic headings, and section navigation in `tests/e2e/landing.spec.ts`
-- [ ] T020 [P] [US1] Write failing responsive assertions for the landing at 320, 390, 768, 1024, and 1440 px with long content, no horizontal overflow, mobile touch operation, and portrait/landscape coverage or an explicit non-applicability reason in `tests/e2e/landing-responsive.spec.ts`
+- [X] T019 [P] [US1] Write failing Playwright tests for first-viewport offer, primary email action, service/problem comprehension, semantic headings, and section navigation in `tests/e2e/landing.spec.ts`
+- [X] T020 [P] [US1] Write failing responsive assertions for the landing at 320, 390, 768, 1024, and 1440 px with long content, no horizontal overflow, mobile touch operation, and portrait/landscape coverage or an explicit non-applicability reason in `tests/e2e/landing-responsive.spec.ts`
 
 ### Implementation for User Story 1
 
-- [ ] T021 [P] [US1] Encode verified public identity, value proposition, Argentine remote service area, response promise, and experience summary in `src/data/profile.ts`
-- [ ] T022 [P] [US1] Encode applications, APIs, integrations, automations, and bespoke enterprise software with problem-to-outcome copy in `src/data/services.ts`
-- [ ] T023 [P] [US1] Define stable accessible section labels and anchors for services, experience, projects, and contact in `src/data/navigation.ts`
-- [ ] T024 [P] [US1] Implement the approved-direction action link with correct semantics, visible focus, and restrained states in `src/components/ui/ActionLink.astro`
-- [ ] T025 [P] [US1] Implement a reusable semantic section introduction without decorative badge treatment in `src/components/ui/SectionHeading.astro`
-- [ ] T026 [US1] Implement keyboard-safe primary navigation from T023 without a UI framework in `src/components/layout/Header.astro`
-- [ ] T027 [US1] Implement professional identity, essential navigation, direct company email, privacy link, and current copyright from T021 and T023 in `src/components/layout/Footer.astro`
-- [ ] T028 [US1] Implement the approved first-viewport composition with truthful offer, Argentine SME audience, primary contact action, and secondary project route in `src/components/sections/Hero.astro`
-- [ ] T029 [US1] Implement the services/problem narrative with varied pacing and no repetitive card grid in `src/components/sections/Services.astro`
-- [ ] T030 [US1] Assemble the independently testable landing increment with header, hero, services, direct email fallback, and footer in `src/pages/index.astro`
-- [ ] T031 [US1] Run the US1 suites and record automated comprehension proxies, keyboard, semantics, responsive, and zero-hydration evidence in `specs/001-custom-software-landing/validation/us1.md`
+- [X] T021 [P] [US1] Encode verified public identity, value proposition, Argentine remote service area, response promise, and experience summary in `src/data/profile.ts`
+- [X] T022 [P] [US1] Encode applications, APIs, integrations, automations, and bespoke enterprise software with problem-to-outcome copy in `src/data/services.ts`
+- [X] T023 [P] [US1] Define stable accessible section labels and anchors for services, experience, projects, and contact in `src/data/navigation.ts`
+- [X] T024 [P] [US1] Implement the approved-direction action link with correct semantics, visible focus, and restrained states in `src/components/ui/ActionLink.astro`
+- [X] T025 [P] [US1] Implement a reusable semantic section introduction without decorative badge treatment in `src/components/ui/SectionHeading.astro`
+- [X] T026 [US1] Implement keyboard-safe primary navigation from T023 without a UI framework in `src/components/layout/Header.astro`
+- [X] T027 [US1] Implement professional identity, essential navigation, direct company email, privacy link, and current copyright from T021 and T023 in `src/components/layout/Footer.astro`
+- [X] T028 [US1] Implement the approved first-viewport composition with truthful offer, Argentine SME audience, primary contact action, and secondary project route in `src/components/sections/Hero.astro`
+- [X] T029 [US1] Implement the services/problem narrative with varied pacing and no repetitive card grid in `src/components/sections/Services.astro`
+- [X] T030 [US1] Assemble the independently testable landing increment with header, hero, services, direct email fallback, and footer in `src/pages/index.astro`
+- [X] T031 [US1] Run the US1 suites and record automated comprehension proxies, keyboard, semantics, responsive, and zero-hydration evidence in `specs/001-custom-software-landing/validation/us1.md`
 
 **Checkpoint**: US1 passes independently as a development increment, but is not a publishable MVP.
 
@@ -107,29 +107,29 @@ delivered to a test mailbox, confirmed honestly, retried after failure, and hand
 
 ### Provider prerequisites for User Story 2
 
-- [ ] T032 [P] [US2] Evaluate managed form services or a serverless endpoint against every contract criterion and record the selected provider, processing location, failure behavior, and rejected alternatives in `specs/001-custom-software-landing/provider-decision.md`
-- [ ] T033 [P] [US2] Implement a deterministic contract-compatible mock with success, validation, privacy-version, rate-limit, timeout, and failure controls in `tests/fixtures/contact-endpoint.ts`
+- [X] T032 [P] [US2] Evaluate managed form services or a serverless endpoint against every contract criterion and record the selected provider, processing location, failure behavior, and rejected alternatives in `specs/001-custom-software-landing/provider-decision.md`
+- [X] T033 [P] [US2] Implement a deterministic contract-compatible mock with success, validation, privacy-version, rate-limit, timeout, and failure controls in `tests/fixtures/contact-endpoint.ts`
 - [ ] T034 [US2] Prove the T032 endpoint accepts the contract payload, rejects invalid and abusive payloads, exposes delivery state, retries failures, alerts terminal failure, and delivers to a real test mailbox in `specs/001-custom-software-landing/provider-decision.md`
 
 ### Tests for User Story 2
 
 > Begin after T033 and confirm each test fails for the expected missing behavior.
 
-- [ ] T035 [P] [US2] Write failing contract-driven tests for conditional fields, exact payload shape, consent, authoritative receipt, duplicate prevention, and success state in `tests/e2e/contact.spec.ts`
-- [ ] T036 [P] [US2] Write failing tests for client/server validation, outdated privacy notice, 403, 413, 429 with Retry-After, timeout, offline, 5xx, preserved retry data, and no false success in `tests/e2e/contact-errors.spec.ts`
-- [ ] T037 [P] [US2] Write failing keyboard, focus, status-announcement, accessible-error, reduced-motion, and no-JavaScript fallback tests in `tests/e2e/contact-accessibility.spec.ts`
+- [X] T035 [P] [US2] Write failing contract-driven tests for conditional fields, exact payload shape, consent, authoritative receipt, duplicate prevention, and success state in `tests/e2e/contact.spec.ts`
+- [X] T036 [P] [US2] Write failing tests for client/server validation, outdated privacy notice, 403, 413, 429 with Retry-After, timeout, offline, 5xx, preserved retry data, and no false success in `tests/e2e/contact-errors.spec.ts`
+- [X] T037 [P] [US2] Write failing keyboard, focus, status-announcement, accessible-error, reduced-motion, and no-JavaScript fallback tests in `tests/e2e/contact-accessibility.spec.ts`
 
 ### Implementation for User Story 2
 
-- [ ] T038 [P] [US2] Define channel options, active `YYYY-MM-DD` privacy version, Spanish validation copy, 10-second timeout, and public fallback email in `src/data/contact.ts`
-- [ ] T039 [P] [US2] Document mailbox ownership, one-business-day Buenos Aires response rule, qualification states, direct-email handling, 90-day deletion, and non-personal audit evidence in `docs/contact-operations.md`
-- [ ] T040 [US2] Implement the minimal semantic form from T038 with channel controls, conditional phone/email regions, consent, honeypot, live status, and `noscript` email fallback in `src/components/sections/Contact.astro`
-- [ ] T041 [US2] Implement framework-free conditional fields, client validation, exact payload creation, 10-second lifecycle, accessible announcements, Retry-After handling, and retry behavior in `src/scripts/contact-form.ts`
+- [X] T038 [P] [US2] Define channel options, active `YYYY-MM-DD` privacy version, Spanish validation copy, 10-second timeout, and public fallback email in `src/data/contact.ts`
+- [X] T039 [P] [US2] Document mailbox ownership, one-business-day Buenos Aires response rule, qualification states, direct-email handling, 90-day deletion, and non-personal audit evidence in `docs/contact-operations.md`
+- [X] T040 [US2] Implement the minimal semantic form from T038 with channel controls, conditional phone/email regions, consent, honeypot, live status, and `noscript` email fallback in `src/components/sections/Contact.astro`
+- [X] T041 [US2] Implement framework-free conditional fields, client validation, exact payload creation, 10-second lifecycle, accessible announcements, Retry-After handling, and retry behavior in `src/scripts/contact-form.ts`
 - [ ] T042 [US2] Implement the legally reviewed Spanish privacy notice from T038 with responsible party, purpose, lawful basis, fields, processor, transfers, retention, rights process, and version in `src/pages/privacidad.astro`
-- [ ] T043 [US2] Implement the truthful noindex confirmation route from the configured response promise without implying delivery beyond endpoint acceptance in `src/pages/contacto/gracias.astro`
-- [ ] T044 [US2] Add the contact section after the proof narrative and connect all primary calls to action without breaking the direct-email path in `src/pages/index.astro`
-- [ ] T045 [US2] Verify built output exposes no secret, inactive value, payload in URLs/logs/analytics, or unsafe provider detail in `specs/001-custom-software-landing/validation/us2-security.md`
-- [ ] T046 [US2] Run mocked contact, error, accessibility, and no-JavaScript suites and record story acceptance in `specs/001-custom-software-landing/validation/us2.md`
+- [X] T043 [US2] Implement the truthful noindex confirmation route from the configured response promise without implying delivery beyond endpoint acceptance in `src/pages/contacto/gracias.astro`
+- [X] T044 [US2] Add the contact section after the proof narrative and connect all primary calls to action without breaking the direct-email path in `src/pages/index.astro`
+- [X] T045 [US2] Verify built output exposes no secret, inactive value, payload in URLs/logs/analytics, or unsafe provider detail in `specs/001-custom-software-landing/validation/us2-security.md`
+- [X] T046 [US2] Run mocked contact, error, accessibility, and no-JavaScript suites and record story acceptance in `specs/001-custom-software-landing/validation/us2.md`
 - [ ] T047 [US2] Run a production-like provider test through every channel, verify test-mail delivery, retry, and terminal alert, and append redacted evidence to `specs/001-custom-software-landing/provider-decision.md`
 - [ ] T048 [US2] Exercise response and deletion operations for form and direct-email paths and record only non-personal audit proof in `specs/001-custom-software-landing/validation/us2-operations.md`
 
@@ -148,20 +148,20 @@ states the problem, contribution, and result without inflating the new company's
 
 > Write these tests first and confirm they fail for the expected missing behavior.
 
-- [ ] T049 [P] [US3] Write failing tests for experience/company-history separation, project completeness, a valid 1-8 entry layout, support for three or more cases, absent media, and navigation to proof in `tests/e2e/projects.spec.ts`
-- [ ] T050 [P] [US3] Write failing content-policy tests that exclude restricted or unapproved entries and detect confidential or placeholder claims in `tests/e2e/project-content.spec.ts`
+- [X] T049 [P] [US3] Write failing tests for experience/company-history separation, project completeness, a valid 1-8 entry layout, support for three or more cases, absent media, and navigation to proof in `tests/e2e/projects.spec.ts`
+- [X] T050 [P] [US3] Write failing content-policy tests that exclude restricted or unapproved entries and detect confidential or placeholder claims in `tests/e2e/project-content.spec.ts`
 
 ### Implementation for User Story 3
 
-- [ ] T051 [P] [US3] Configure the projects Content Collection with explicit `glob()` loader, strict schema, image validation, confidentiality, approval, and ordering rules in `src/content.config.ts`
-- [ ] T052 [P] [US3] Encode verified system types, process expertise, collaboration approach, and technical capabilities without inflating company history in `src/data/experience.ts`
-- [ ] T053 [US3] Add every owner-approved public or anonymized case available for launch, allowing fewer than three and up to eight, with factual outcomes and no restricted content in `src/content/projects/`
-- [ ] T054 [P] [US3] Add only licensed and approved project imagery with provenance and meaningful alternative-text decisions in `src/assets/projects/`
-- [ ] T055 [US3] Implement the experience narrative and working approach from T052 in `src/components/sections/Experience.astro`
-- [ ] T056 [US3] Implement a resilient text-led project summary against the T051 schema with optional optimized media and confidentiality labels in `src/components/ui/ProjectSummary.astro`
-- [ ] T057 [US3] Implement the approved-direction project sequence with 1-8 entries, native Astro image optimization, and honest missing-media behavior in `src/components/sections/Projects.astro`
-- [ ] T058 [US3] Integrate experience and projects into the persuasive sequence and secondary hero route in `src/pages/index.astro`
-- [ ] T059 [US3] Run schema, content-policy, project, responsive, and confidentiality checks and record acceptance in `specs/001-custom-software-landing/validation/us3.md`
+- [X] T051 [P] [US3] Configure the projects Content Collection with explicit `glob()` loader, strict schema, image validation, confidentiality, approval, and ordering rules in `src/content.config.ts`
+- [X] T052 [P] [US3] Encode verified system types, process expertise, collaboration approach, and technical capabilities without inflating company history in `src/data/experience.ts`
+- [X] T053 [US3] Add every owner-approved public or anonymized case available for launch, allowing fewer than three and up to eight, with factual outcomes and no restricted content in `src/content/projects/`
+- [X] T054 [P] [US3] Add only licensed and approved project imagery with provenance and meaningful alternative-text decisions in `src/assets/projects/`
+- [X] T055 [US3] Implement the experience narrative and working approach from T052 in `src/components/sections/Experience.astro`
+- [X] T056 [US3] Implement a resilient text-led project summary against the T051 schema with optional optimized media and confidentiality labels in `src/components/ui/ProjectSummary.astro`
+- [X] T057 [US3] Implement the approved-direction project sequence with 1-8 entries, native Astro image optimization, and honest missing-media behavior in `src/components/sections/Projects.astro`
+- [X] T058 [US3] Integrate experience and projects into the persuasive sequence and secondary hero route in `src/pages/index.astro`
+- [X] T059 [US3] Run schema, content-policy, project, responsive, and confidentiality checks and record acceptance in `specs/001-custom-software-landing/validation/us3.md`
 
 **Checkpoint**: US3 passes independently. All three stories are now ready for integrated release gates.
 
@@ -172,23 +172,23 @@ states the problem, contribution, and result without inflating the new company's
 **Purpose**: Complete the publishable MVP by integrating US1, US2, US3 and satisfying every
 cross-cutting constitutional gate.
 
-- [ ] T060 [P] Define unique verified title, description, canonical path, robots directive, Open Graph asset, and conditional structured-data values for every public route in `src/data/seo.ts`
-- [ ] T061 Apply route-specific metadata, safe Person/ProfessionalService JSON-LD, social image, and noindex confirmation behavior in `src/layouts/BaseLayout.astro`, `src/pages/index.astro`, `src/pages/privacidad.astro`, and `src/pages/contacto/gracias.astro`
-- [ ] T062 Generate environment-correct `robots.txt`, reference the sitemap, and preserve confirmation-route exclusion in `src/pages/robots.txt.ts` and `astro.config.ts`
-- [ ] T063 After T060-T062, implement SEO regression tests for titles, descriptions, canonicals, language, headings, Open Graph, sitemap, robots, noindex, and truthful structured data, and confirm they pass in `tests/e2e/seo.spec.ts`
-- [ ] T064 [P] Implement whole-page axe tests with all available WCAG 2.2 A/AA rules at every representative viewport and zero violations in `tests/e2e/accessibility.spec.ts`
-- [ ] T065 [P] Implement cross-browser keyboard, 200%/400% zoom-reflow, focus visibility, target size, status, reduced-motion, long-content, missing-resource, and mobile touch checks across landing, privacy, and confirmation with every relevant state in `tests/e2e/cross-cutting.spec.ts`, and record portrait/landscape coverage or explicit non-applicability in `specs/001-custom-software-landing/validation/responsive.md`
-- [ ] T066 Run three consecutive Lighthouse mobile laboratory audits against the static build served in a controlled pre-deployment preview, require LCP <=2.5 s, CLS <=0.1, and TBT <=200 ms in every run, inspect output, and retain evidence in `specs/001-custom-software-landing/validation/performance.md`
-- [ ] T067 Run dependency, built-output, secret, payload-leak, endpoint-origin, and abuse-control security checks and record results in `specs/001-custom-software-landing/validation/security.md`
+- [X] T060 [P] Define unique verified title, description, canonical path, robots directive, Open Graph asset, and conditional structured-data values for every public route in `src/data/seo.ts`
+- [X] T061 Apply route-specific metadata, safe Person/ProfessionalService JSON-LD, social image, and noindex confirmation behavior in `src/layouts/BaseLayout.astro`, `src/pages/index.astro`, `src/pages/privacidad.astro`, and `src/pages/contacto/gracias.astro`
+- [X] T062 Generate environment-correct `robots.txt`, reference the sitemap, and preserve confirmation-route exclusion in `src/pages/robots.txt.ts` and `astro.config.ts`
+- [X] T063 After T060-T062, implement SEO regression tests for titles, descriptions, canonicals, language, headings, Open Graph, sitemap, robots, noindex, and truthful structured data, and confirm they pass in `tests/e2e/seo.spec.ts`
+- [X] T064 [P] Implement whole-page axe tests with all available WCAG 2.2 A/AA rules at every representative viewport and zero violations in `tests/e2e/accessibility.spec.ts`
+- [X] T065 [P] Implement cross-browser keyboard, 200%/400% zoom-reflow, focus visibility, target size, status, reduced-motion, long-content, missing-resource, and mobile touch checks across landing, privacy, and confirmation with every relevant state in `tests/e2e/cross-cutting.spec.ts`, and record portrait/landscape coverage or explicit non-applicability in `specs/001-custom-software-landing/validation/responsive.md`
+- [X] T066 Run three consecutive Lighthouse mobile laboratory audits against the static build served in a controlled pre-deployment preview, require LCP <=2.5 s, CLS <=0.1, and TBT <=200 ms in every run, inspect output, and retain evidence in `specs/001-custom-software-landing/validation/performance.md`
+- [X] T067 Run dependency, built-output, secret, payload-leak, endpoint-origin, and abuse-control security checks and record results in `specs/001-custom-software-landing/validation/security.md`
 - [ ] T068 Verify the privacy notice received qualified review and matches provider, transfer, retention, rights, consent-version, and mailbox operations in `specs/001-custom-software-landing/validation/privacy.md`
 - [ ] T069 Audit public copy, project claims, licenses, media provenance, alternative text, links, and production assets with zero placeholders in `specs/001-custom-software-landing/validation/content.md`
 - [ ] T070 Conduct at least 10 first-exposure moderated sessions with at least five mobile and five desktop participants, evaluate SC-001, SC-003, SC-011 and SC-002 independently in each cohort, and record anonymized results in `specs/001-custom-software-landing/validation/usability.md`
 - [ ] T071 Review T070 results; when any criterion fails, apply one consolidated correction batch in any affected file, record every modified path, repeat the affected validation with new anonymized evidence, and allow at most two correction/retest cycles before blocking release and requiring replanning in `specs/001-custom-software-landing/validation/usability.md`
 - [ ] T072 Capture and verify full-page 1440 px and 390 px renders after usability acceptance in `.impeccable/review/desktop.png` and `.impeccable/review/mobile.png`
-- [ ] T073 Run the Impeccable detector exactly once and send its findings, original request, direction contract, verified captures, and comp/diff evidence when applicable to a fresh finish reviewer in `.impeccable/review/verdict.md`
-- [ ] T074 Apply the reviewer disposition as one consolidated fix or rebuild batch, recapture the same viewports, obtain the bounded confirmation verdict, and update `.impeccable/review/verdict.md`
-- [ ] T075 Run the Impeccable documenter only after the final correction to record the shipped visual system and provenance in `DESIGN.md` and its generated sidecar
-- [ ] T076 Query the ruleset configured by T010, verify its stable identifier, active `refs/heads/main` target, pull-request requirement, seven required checks, and absence of undocumented bypass, and append redacted closing evidence to `specs/001-custom-software-landing/validation/ci.md`
+- [X] T073 Run the Impeccable detector exactly once and send its findings, original request, direction contract, verified captures, and comp/diff evidence when applicable to a fresh finish reviewer in `.impeccable/review/verdict.md`
+- [X] T074 Apply the reviewer disposition as one consolidated fix or rebuild batch, recapture the same viewports, obtain the bounded confirmation verdict, and update `.impeccable/review/verdict.md`
+- [X] T075 Run the Impeccable documenter only after the final correction to record the shipped visual system and provenance in `DESIGN.md` and its generated sidecar
+- [X] T076 Query the ruleset configured by T010, verify its stable identifier, active `refs/heads/main` target, pull-request requirement, seven required checks, and absence of undocumented bypass, and append redacted closing evidence to `specs/001-custom-software-landing/validation/ci.md`
 - [ ] T077 After T076, trigger `.github/workflows/ci.yml` from an `001-custom-software-landing` pull request, introduce and then revert a controlled failing change to prove every required check blocks merge, and append redacted evidence to `specs/001-custom-software-landing/validation/ci.md`
 - [ ] T078 Execute every pre-deployment command and manual scenario in `specs/001-custom-software-landing/quickstart.md`, require all stories and constitutional release gates to pass, validate the configured production-audit workflow without requiring a live URL, and record MVP readiness to publish in `specs/001-custom-software-landing/validation/final.md`
 

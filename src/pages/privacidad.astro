@@ -1,0 +1,128 @@
+---
+import Footer from '../components/layout/Footer.astro';
+import Header from '../components/layout/Header.astro';
+import { contactEmail, privacyVersion } from '../data/contact';
+import { privacySeo } from '../data/seo';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout metadata={privacySeo}>
+  <Header />
+  <main id="contenido" class="shell legal-page">
+    <header>
+      <h1>Aviso de privacidad</h1>
+      <p>Versión {privacyVersion} · contenido demostrativo pendiente de revisión legal.</p>
+    </header>
+    <section>
+      <h2>Responsable y alcance</h2>
+      <p>
+        <strong>Taller Norte</strong> es una identidad ficticia utilizada para este prototipo. Antes
+        de publicar deben incorporarse la identidad legal y el domicilio reales. El canal temporal
+        para consultas es <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.
+      </p>
+    </section>
+    <section>
+      <h2>Datos, finalidad y base</h2>
+      <p>
+        El formulario trata nombre, vía preferida, teléfono o correo según la elección,
+        consentimiento y versión del aviso. Se usan únicamente para responder la solicitud y evaluar
+        una posible relación profesional. El tratamiento se basa en el consentimiento, que puede
+        retirarse.
+      </p>
+    </section>
+    <section>
+      <h2>Proveedor y transferencias</h2>
+      <p>
+        El endpoint de contacto será operado por un proveedor documentado antes del lanzamiento. Su
+        identidad, ubicación de procesamiento, subencargados y transferencias internacionales deben
+        completarse aquí una vez contratado. No se incorporan analítica ni perfiles publicitarios.
+      </p>
+    </section>
+    <section>
+      <h2>Conservación y seguridad</h2>
+      <p>
+        Las solicitudes que no se conviertan en clientes se eliminarán dentro de los 90 días
+        posteriores al último contacto. Se conservarán únicamente eventos de auditoría sin datos
+        personales. El proveedor deberá aplicar HTTPS, controles de origen, límites de abuso y
+        monitoreo de entrega.
+      </p>
+    </section>
+    <section>
+      <h2>Derechos</h2>
+      <p>
+        Podés solicitar acceso, rectificación, actualización, supresión o retiro del consentimiento
+        escribiendo a <a href={`mailto:${contactEmail}`}>{contactEmail}</a>. La información
+        operativa y el procedimiento real deben verificarse antes de publicar.
+      </p>
+    </section>
+    <p>
+      <a class="back-link" href="/#contacto">
+        <svg aria-hidden="true" viewBox="0 0 24 12" width="24" height="12">
+          <path d="M23 6H3M8 1 3 6l5 5" />
+        </svg>
+        Volver al contacto
+      </a>
+    </p>
+  </main>
+  <Footer />
+</BaseLayout>
+<style>
+  .legal-page {
+    padding-block: clamp(4rem, 9vw, 9rem);
+  }
+  header {
+    max-width: 65rem;
+    border-bottom: 1px solid var(--color-ink);
+    padding-bottom: 2rem;
+  }
+  h1 {
+    max-width: 12ch;
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 570;
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+  }
+  header p {
+    color: var(--color-mark);
+    font-weight: 650;
+  }
+  section {
+    display: grid;
+    grid-template-columns: minmax(12rem, 0.4fr) minmax(0, 1fr);
+    gap: clamp(1.5rem, 6vw, 7rem);
+    max-width: 70rem;
+    border-bottom: 1px solid var(--line);
+    padding-block: 2.3rem;
+  }
+  h2 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+  }
+  section p {
+    max-width: 68ch;
+    margin: 0;
+    color: var(--color-ink-muted);
+  }
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-top: 2rem;
+    font-weight: 700;
+  }
+  .back-link svg {
+    fill: none;
+    stroke: var(--color-mark);
+    stroke-linecap: square;
+    stroke-width: 1.75;
+  }
+  @media (max-width: 40rem) {
+    section {
+      grid-template-columns: 1fr;
+      gap: 0.6rem;
+    }
+  }
+</style>

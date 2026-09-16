@@ -1,0 +1,147 @@
+---
+import { capabilities, technologyGroups } from '../../data/experience';
+import SectionHeading from '../ui/SectionHeading.astro';
+---
+
+<section id="experiencia" class="section-frame experience" aria-labelledby="experience-title">
+  <div class="shell experience-grid">
+    <div>
+      <SectionHeading
+        title="Una forma de trabajar que deja el sistema entendible."
+        description="Taller Norte es una empresa nueva. Las capacidades que siguen son ilustrativas del perfil profesional y deberán verificarse antes de publicar."
+      />
+      <p class="company-note">
+        <strong>Distinción importante:</strong> no se atribuyen antigüedad, equipo ni cartera a la
+        empresa. Este prototipo demuestra cómo se presentará la trayectoria real.
+      </p>
+    </div>
+    <div class="capability-list">
+      {capabilities.map((capability, index) => (
+        <article>
+          <span class="coordinate" aria-hidden="true">
+            {String.fromCharCode(65 + index)}-{index + 1}
+          </span>
+          <div>
+            <h3>{capability.area}</h3>
+            <p>{capability.detail}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+  <div class="shell tech-matrix" aria-label="Tecnologías demostrativas">
+    {technologyGroups.map((group) => (
+      <div>
+        <strong>{group.label}</strong>
+        <ul>
+          {group.values.map((value) => (
+            <li>{value}</li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+</section>
+<style>
+  .experience {
+    background: var(--color-ink);
+    color: #f5f7f3;
+  }
+  :global(.experience .section-heading p) {
+    color: #c9d3ce;
+  }
+  .experience-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(28rem, 1.2fr);
+    gap: clamp(3rem, 8vw, 9rem);
+  }
+  .company-note {
+    max-width: 52ch;
+    border-top: 1px solid #63746f;
+    margin-top: 2rem;
+    padding-top: 1.3rem;
+    color: #c9d3ce;
+  }
+  .company-note strong {
+    color: #fff;
+  }
+  .capability-list {
+    border-top: 1px solid #63746f;
+  }
+  article {
+    display: grid;
+    grid-template-columns: 4rem 1fr;
+    gap: 1rem;
+    border-bottom: 1px solid #63746f;
+    padding-block: 1.5rem;
+  }
+  .coordinate {
+    color: #83c5d8;
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    font-variant-numeric: tabular-nums;
+  }
+  h3 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 1.35rem;
+    font-weight: 600;
+  }
+  article p {
+    max-width: 55ch;
+    margin: 0.35rem 0 0;
+    color: #c9d3ce;
+  }
+  .tech-matrix {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: clamp(4rem, 8vw, 8rem);
+    border-block: 1px solid #63746f;
+  }
+  .tech-matrix > div {
+    min-width: 0;
+    padding: 1.4rem;
+    border-right: 1px solid #63746f;
+  }
+  .tech-matrix > div:last-child {
+    border-right: 0;
+  }
+  .tech-matrix strong {
+    color: #83c5d8;
+    font-family: var(--font-display);
+  }
+  ul {
+    margin: 0.8rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    margin-top: 0.25rem;
+    color: #e6ece8;
+  }
+  @media (max-width: 63.99rem) {
+    .experience-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 47.99rem) {
+    .tech-matrix {
+      grid-template-columns: 1fr 1fr;
+    }
+    .tech-matrix > div:nth-child(2) {
+      border-right: 0;
+    }
+    .tech-matrix > div:nth-child(-n + 2) {
+      border-bottom: 1px solid #63746f;
+    }
+  }
+  @media (max-width: 23rem) {
+    .tech-matrix {
+      grid-template-columns: 1fr;
+    }
+    .tech-matrix > div {
+      border-right: 0;
+      border-bottom: 1px solid #63746f;
+    }
+  }
+</style>

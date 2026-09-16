@@ -1,0 +1,322 @@
+---
+import { contactChannels, contactEmail, privacyVersion } from '../../data/contact';
+import { profile } from '../../data/profile';
+import SectionHeading from '../ui/SectionHeading.astro';
+const endpoint = import.meta.env.PUBLIC_CONTACT_ENDPOINT ?? 'https://forms.example.test/contact';
+---
+
+<section id="contacto" class="section-frame contact" aria-labelledby="contact-title">
+  <div class="shell contact-grid">
+    <div>
+      <SectionHeading
+        title="Dejanos una vía. Nosotros iniciamos la conversación."
+        description="No necesitás redactar el proyecto ahora. Elegí cómo querés que te contactemos y responderemos dentro de un día hábil."
+      />
+      <div class="contact-fallback">
+        <span class="technical-label">Canal directo</span>
+        <a href={`mailto:${contactEmail}`}>{contactEmail}</a>
+        <p>También podés escribir directamente. Aplicamos el mismo plazo de respuesta.</p>
+      </div>
+    </div>
+    <form id="contact-form" action={endpoint} method="post" novalidate data-timeout="10000">
+      <input type="hidden" name="privacyVersion" value={privacyVersion} />
+      <input type="hidden" name="source" value="landing-custom-software" />
+      <div class="honeypot" aria-hidden="true">
+        <label for="website">Dejá este campo vacío</label>
+        <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+      </div>
+      <div class="form-field">
+        <label for="name">Tu nombre</label>
+        <input
+          class="field"
+          id="name"
+          name="name"
+          type="text"
+          autocomplete="name"
+          minlength="2"
+          maxlength="80"
+          required
+          aria-describedby="name-error"
+        />
+        <p class="field-error" id="name-error" data-error-for="name"></p>
+      </div>
+      <fieldset>
+        <legend>¿Por qué vía preferís que te contactemos?</legend>
+        <div class="channel-options">
+          {contactChannels.map((channel, index) => (
+            <label>
+              <input
+                type="radio"
+                name="preferredChannel"
+                value={channel.value}
+                required
+                checked={index === 0}
+              />
+              <span>
+                <strong>{channel.label}</strong>
+                <small>{channel.detail}</small>
+              </span>
+            </label>
+          ))}
+        </div>
+        <p class="field-error" data-error-for="preferredChannel"></p>
+      </fieldset>
+      <div class="form-field" data-channel-field="phone">
+        <label for="phone">Teléfono</label>
+        <input
+          class="field"
+          id="phone"
+          name="phone"
+          type="tel"
+          autocomplete="tel"
+          inputmode="tel"
+          minlength="7"
+          maxlength="30"
+          required
+          aria-describedby="phone-error"
+        />
+        <p class="field-error" id="phone-error" data-error-for="phone"></p>
+      </div>
+      <div class="form-field" data-channel-field="email" hidden>
+        <label for="email">Correo electrónico</label>
+        <input
+          class="field"
+          id="email"
+          name="email"
+          type="email"
+          autocomplete="email"
+          maxlength="120"
+          disabled
+          aria-describedby="email-error"
+        />
+        <p class="field-error" id="email-error" data-error-for="email"></p>
+      </div>
+      <label class="consent">
+        <input type="checkbox" name="consent" value="true" required />
+        <span>
+          Acepto que {profile.brand} use estos datos para responder mi solicitud según el{' '}
+          <a href="/privacidad/">aviso de privacidad</a>.
+        </span>
+      </label>
+      <p class="field-error" data-error-for="consent"></p>
+      <div class="submit-row">
+        <button type="submit">
+          <span data-button-label>Solicitar contacto</span>
+          <svg aria-hidden="true" viewBox="0 0 24 12" width="24" height="12">
+            <path d="M1 6h20M16 1l5 5-5 5" />
+          </svg>
+        </button>
+        <span>{profile.responsePromise}</span>
+      </div>
+      <p class="form-status" data-form-status role="status" aria-live="polite"></p>
+      <noscript>
+        <p class="no-script">
+          El formulario mejorado requiere JavaScript. Escribinos a{' '}
+          <a href={`mailto:${contactEmail}`}>{contactEmail}</a>.
+        </p>
+      </noscript>
+    </form>
+  </div>
+</section>
+<script>
+  import '../../scripts/contact-form';
+</script>
+<style>
+  .contact {
+    background: var(--color-plan-dark);
+    color: #f5f7f3;
+  }
+  :global(.contact .section-heading p) {
+    color: #d4e2e6;
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(28rem, 1.2fr);
+    gap: clamp(3rem, 9vw, 10rem);
+    align-items: start;
+  }
+  .contact-fallback {
+    max-width: 35rem;
+    border-top: 1px solid #6e929f;
+    padding-top: 1.2rem;
+  }
+  .contact-fallback a {
+    display: block;
+    width: fit-content;
+    margin-top: 0.6rem;
+    color: #fff;
+    font-family: var(--font-display);
+    font-size: clamp(1.25rem, 2.5vw, 2rem);
+    overflow-wrap: anywhere;
+  }
+  .contact-fallback p {
+    color: #c8d9de;
+  }
+  form {
+    position: relative;
+    display: grid;
+    gap: 1.5rem;
+    border-top: 1px solid #9eb7bf;
+    padding-top: 1.5rem;
+  }
+  .honeypot {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+  label,
+  legend {
+    font-family: var(--font-display);
+    font-weight: 610;
+  }
+  .form-field > label {
+    display: block;
+    margin-bottom: 0.45rem;
+  }
+  fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  legend {
+    margin-bottom: 0.75rem;
+  }
+  .channel-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .channel-options label {
+    position: relative;
+    min-width: 0;
+  }
+  .channel-options input {
+    position: absolute;
+    opacity: 0;
+  }
+  .channel-options span {
+    display: grid;
+    min-height: 5.8rem;
+    align-content: start;
+    gap: 0.2rem;
+    border: 1px solid #6e929f;
+    padding: 0.8rem;
+    cursor: pointer;
+    transition:
+      background 160ms ease,
+      color 160ms ease;
+  }
+  .channel-options label + label span {
+    border-left: 0;
+  }
+  .channel-options input:checked + span {
+    background: #f5f7f3;
+    color: var(--color-plan-dark);
+  }
+  .channel-options input:focus-visible + span {
+    outline: 3px solid #f2a890;
+    outline-offset: 3px;
+  }
+  .channel-options small {
+    color: inherit;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 1.3;
+  }
+  .field {
+    border-color: #6e929f;
+    background: rgb(255 255 255 / 0.09);
+    color: #fff;
+    caret-color: #f2a890;
+  }
+  .field:hover {
+    border-color: #d4e0e3;
+  }
+  .field:focus {
+    border-color: #fff;
+    box-shadow: 0 0 0 3px rgb(255 255 255 / 0.18);
+  }
+  .field-error {
+    color: #ffd0c4;
+  }
+  .consent {
+    display: grid;
+    grid-template-columns: 1.35rem 1fr;
+    gap: 0.8rem;
+    align-items: start;
+    font-family: var(--font-body);
+    font-weight: 400;
+  }
+  .consent input {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-top: 0.15rem;
+    accent-color: var(--color-mark);
+  }
+  .submit-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border-top: 1px solid #6e929f;
+    padding-top: 1.4rem;
+  }
+  button {
+    display: inline-flex;
+    min-height: 3.35rem;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    border: 0;
+    background: #f5f7f3;
+    color: var(--color-plan-dark);
+    padding: 0.75rem 1rem;
+    font-family: var(--font-display);
+    font-weight: 700;
+    cursor: pointer;
+  }
+  button:hover {
+    background: #fff;
+  }
+  button:disabled {
+    cursor: wait;
+    opacity: 0.7;
+  }
+  button svg {
+    flex: 0 0 auto;
+    fill: none;
+    stroke: var(--color-mark);
+    stroke-linecap: square;
+    stroke-width: 1.75;
+  }
+  .submit-row > span {
+    color: #c8d9de;
+    font-size: 0.9rem;
+  }
+  .form-status:not(:empty),
+  .no-script {
+    margin: 0;
+    border: 1px solid #9eb7bf;
+    padding: 0.8rem;
+  }
+  @media (max-width: 63.99rem) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 35rem) {
+    .channel-options {
+      grid-template-columns: 1fr;
+    }
+    .channel-options label + label span {
+      border-top: 0;
+      border-left: 1px solid #6e929f;
+    }
+    .submit-row {
+      align-items: stretch;
+      flex-direction: column;
+    }
+  }
+</style>

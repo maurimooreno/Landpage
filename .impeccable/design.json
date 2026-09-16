@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-13T02:20:23.7493137-03:00",
+  "title": "Design System: Taller Norte",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Papel de taller",
+        "canonical": "#edf0eb",
+        "tonalRamp": ["oklch(15% 0.008 145)", "oklch(27% 0.008 145)", "oklch(39% 0.008 145)", "oklch(51% 0.008 145)", "oklch(63% 0.008 145)", "oklch(75% 0.008 145)", "oklch(87% 0.008 145)", "oklch(95% 0.008 145)"]
+      },
+      "paper-deep": {
+        "role": "neutral",
+        "displayName": "Papel prensado",
+        "canonical": "#dfe5df",
+        "tonalRamp": ["oklch(15% 0.012 145)", "oklch(27% 0.012 145)", "oklch(39% 0.012 145)", "oklch(51% 0.012 145)", "oklch(63% 0.012 145)", "oklch(75% 0.012 145)", "oklch(87% 0.012 145)", "oklch(95% 0.012 145)"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Tinta forestal",
+        "canonical": "#102720",
+        "tonalRamp": ["oklch(15% 0.034 164)", "oklch(27% 0.034 164)", "oklch(39% 0.034 164)", "oklch(51% 0.034 164)", "oklch(63% 0.034 164)", "oklch(75% 0.034 164)", "oklch(87% 0.034 164)", "oklch(95% 0.034 164)"]
+      },
+      "ink-muted": {
+        "role": "neutral",
+        "displayName": "Tinta atenuada",
+        "canonical": "#40564f",
+        "tonalRamp": ["oklch(15% 0.026 164)", "oklch(27% 0.026 164)", "oklch(39% 0.026 164)", "oklch(51% 0.026 164)", "oklch(63% 0.026 164)", "oklch(75% 0.026 164)", "oklch(87% 0.026 164)", "oklch(95% 0.026 164)"]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Regla metalica",
+        "canonical": "#aab8b2",
+        "tonalRamp": ["oklch(15% 0.016 164)", "oklch(27% 0.016 164)", "oklch(39% 0.016 164)", "oklch(51% 0.016 164)", "oklch(63% 0.016 164)", "oklch(75% 0.016 164)", "oklch(87% 0.016 164)", "oklch(95% 0.016 164)"]
+      },
+      "plan": {
+        "role": "primary",
+        "displayName": "Azul de plano",
+        "canonical": "#0b6684",
+        "tonalRamp": ["oklch(15% 0.085 225)", "oklch(27% 0.085 225)", "oklch(39% 0.085 225)", "oklch(51% 0.085 225)", "oklch(63% 0.085 225)", "oklch(75% 0.075 225)", "oklch(87% 0.055 225)", "oklch(95% 0.025 225)"]
+      },
+      "plan-dark": {
+        "role": "primary",
+        "displayName": "Azul de plano profundo",
+        "canonical": "#07475e",
+        "tonalRamp": ["oklch(15% 0.07 225)", "oklch(27% 0.07 225)", "oklch(39% 0.07 225)", "oklch(51% 0.07 225)", "oklch(63% 0.07 225)", "oklch(75% 0.065 225)", "oklch(87% 0.045 225)", "oklch(95% 0.02 225)"]
+      },
+      "mark": {
+        "role": "secondary",
+        "displayName": "Marca de correccion",
+        "canonical": "#bd452d",
+        "tonalRamp": ["oklch(15% 0.13 33)", "oklch(27% 0.13 33)", "oklch(39% 0.13 33)", "oklch(51% 0.13 33)", "oklch(63% 0.12 33)", "oklch(75% 0.095 33)", "oklch(87% 0.06 33)", "oklch(95% 0.025 33)"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Rotulo principal", "purpose": "Propuesta principal y titulos de pagina de medida corta." },
+      "headline": { "displayName": "Apertura de seccion", "purpose": "Titulos editoriales de seccion con interlineado compacto." },
+      "title": { "displayName": "Titulo tecnico", "purpose": "Servicios, casos y capacidades." },
+      "body": { "displayName": "Lectura operativa", "purpose": "Explicaciones, avisos y contenido de formulario." },
+      "label": { "displayName": "Coordenada", "purpose": "Codigos, tablas, laminas y metadatos en mayusculas." }
+    },
+    "shadows": [
+      { "name": "field-focus", "value": "0 0 0 3px rgb(11 102 132 / 0.18)", "purpose": "Halo funcional de foco en campos sobre papel." },
+      { "name": "field-focus-inverse", "value": "0 0 0 3px rgb(255 255 255 / 0.18)", "purpose": "Halo funcional de foco en campos sobre el fondo azul profundo." }
+    ],
+    "motion": [
+      { "name": "ease-out-expo", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Avance del eje de proceso y desplazamientos tactiles breves." },
+      { "name": "state-fast", "value": "160ms ease", "purpose": "Cambios de borde, fondo y color en controles." },
+      { "name": "action-lift", "value": "180ms cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Elevacion de dos pixeles en acciones enlazadas." }
+    ],
+    "breakpoints": [
+      { "name": "matrix-narrow", "value": "23rem" },
+      { "name": "control-stack", "value": "35rem" },
+      { "name": "legal-stack", "value": "40rem" },
+      { "name": "mobile", "value": "47.99rem" },
+      { "name": "wide-stack", "value": "63.99rem" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Accion primaria",
+      "kind": "button",
+      "refersTo": "action-primary",
+      "description": "Llamada principal rectangular con icono direccional naranja.",
+      "html": "<a class=\"ds-action-primary\" href=\"#\"><span>Hablemos del proyecto</span><svg aria-hidden=\"true\" viewBox=\"0 0 24 12\" width=\"24\" height=\"12\"><path d=\"M1 6h20M16 1l5 5-5 5\"/></svg></a>",
+      "css": ".ds-action-primary{display:inline-flex;min-height:3rem;align-items:center;justify-content:space-between;gap:1.5rem;border:1px solid var(--color-ink,#102720);padding:.7rem .9rem;background:var(--color-ink,#102720);color:#fff;font-family:var(--font-display,'Saira Variable','Arial Narrow',sans-serif);font-weight:680;text-decoration:none;transition:background 180ms ease,translate 180ms cubic-bezier(.16,1,.3,1)}.ds-action-primary svg{fill:none;stroke:var(--color-mark,#bd452d);stroke-linecap:square;stroke-width:1.75}.ds-action-primary:hover{background:var(--color-plan-dark,#07475e);translate:0 -2px}.ds-action-primary:focus-visible{outline:3px solid var(--color-mark,#bd452d);outline-offset:4px}"
+    },
+    {
+      "name": "Accion secundaria",
+      "kind": "button",
+      "refersTo": "action-secondary",
+      "description": "Accion auxiliar transparente que conserva el peso del plano.",
+      "html": "<a class=\"ds-action-secondary\" href=\"#\"><span>Ver casos demostrativos</span><svg aria-hidden=\"true\" viewBox=\"0 0 24 12\" width=\"24\" height=\"12\"><path d=\"M1 6h20M16 1l5 5-5 5\"/></svg></a>",
+      "css": ".ds-action-secondary{display:inline-flex;min-height:3rem;align-items:center;justify-content:space-between;gap:1.5rem;border:1px solid var(--color-rule,#aab8b2);padding:.7rem .9rem;background:transparent;color:var(--color-ink,#102720);font-family:var(--font-display,'Saira Variable','Arial Narrow',sans-serif);font-weight:680;text-decoration:none;transition:border-color 180ms ease,background 180ms ease,translate 180ms cubic-bezier(.16,1,.3,1)}.ds-action-secondary svg{fill:none;stroke:var(--color-mark,#bd452d);stroke-linecap:square;stroke-width:1.75}.ds-action-secondary:hover{border-color:var(--color-ink,#102720);background:rgb(255 255 255/.42);translate:0 -2px}.ds-action-secondary:focus-visible{outline:3px solid var(--color-mark,#bd452d);outline-offset:4px}"
+    },
+    {
+      "name": "Campo de texto",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Campo rectangular de lectura clara y foco azul funcional.",
+      "html": "<label class=\"ds-field-label\" for=\"ds-name\">Nombre</label><input class=\"ds-field\" id=\"ds-name\" type=\"text\" value=\"Andrea Romero\">",
+      "css": ".ds-field-label{display:block;margin-bottom:.45rem;color:var(--color-ink,#102720);font-family:var(--font-display,'Saira Variable','Arial Narrow',sans-serif);font-weight:610}.ds-field{width:100%;min-height:3.25rem;border:1px solid var(--color-rule,#aab8b2);border-radius:0;background:rgb(255 255 255/.54);color:var(--color-ink,#102720);padding:.75rem .9rem;font:1rem/1.58 var(--font-body,'Source Sans 3 Variable',sans-serif);transition:border-color 160ms ease,box-shadow 160ms ease}.ds-field:hover{border-color:var(--color-ink-muted,#40564f)}.ds-field:focus{border-color:var(--color-plan,#0b6684);box-shadow:0 0 0 3px rgb(11 102 132/.18);outline:0}.ds-field:focus-visible{outline:3px solid var(--color-mark,#bd452d);outline-offset:4px}"
+    },
+    {
+      "name": "Navegacion principal",
+      "kind": "nav",
+      "description": "Marca compacta y enlaces tecnicos sobre una cabecera de papel translucido.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Navegacion principal\"><a class=\"ds-brand\" href=\"#\">Taller Norte <small>Software a medida</small></a><span><a href=\"#\">Servicios</a><a href=\"#\">Experiencia</a><a href=\"#\">Contacto</a></span></nav>",
+      "css": ".ds-nav{display:flex;min-height:4.5rem;align-items:center;justify-content:space-between;gap:2rem;border-bottom:1px solid var(--color-rule,#aab8b2);background:rgb(237 240 235/.94);color:var(--color-ink,#102720);padding:0 1.1rem;font-family:var(--font-display,'Saira Variable','Arial Narrow',sans-serif)}.ds-nav a{color:inherit;text-decoration:none}.ds-brand{font-size:1.08rem;font-weight:720}.ds-brand small{margin-left:.7rem;color:var(--color-ink-muted,#40564f);font-size:.78rem;font-weight:400}.ds-nav>span{display:flex;gap:2rem}.ds-nav>span a{font-size:.87rem;font-weight:610}.ds-nav a:hover{text-decoration:underline;text-underline-offset:.22em}.ds-nav a:focus-visible{outline:3px solid var(--color-mark,#bd452d);outline-offset:4px}"
+    },
+    {
+      "name": "Selector de via",
+      "kind": "custom",
+      "description": "Control segmentado ortogonal para elegir el canal de contacto.",
+      "html": "<div class=\"ds-channel\" role=\"radiogroup\" aria-label=\"Via preferida\"><label><input type=\"radio\" name=\"channel\" checked><span><strong>Llamada</strong><small>Por telefono</small></span></label><label><input type=\"radio\" name=\"channel\"><span><strong>WhatsApp</strong><small>Mensaje breve</small></span></label><label><input type=\"radio\" name=\"channel\"><span><strong>Correo</strong><small>Respuesta escrita</small></span></label></div>",
+      "css": ".ds-channel{display:grid;grid-template-columns:repeat(3,1fr);color:#f5f7f3;font-family:var(--font-display,'Saira Variable','Arial Narrow',sans-serif)}.ds-channel label{position:relative;min-width:0}.ds-channel input{position:absolute;opacity:0}.ds-channel span{display:grid;min-height:5.8rem;align-content:start;gap:.2rem;border:1px solid #6e929f;padding:.8rem;cursor:pointer;transition:background 160ms ease,color 160ms ease}.ds-channel label+label span{border-left:0}.ds-channel input:checked+span{background:#f5f7f3;color:var(--color-plan-dark,#07475e)}.ds-channel input:focus-visible+span{outline:3px solid #f2a890;outline-offset:3px}.ds-channel small{font-family:var(--font-body,'Source Sans 3 Variable',sans-serif);font-size:.8rem;font-weight:400;line-height:1.3}"
+    },
+    {
+      "name": "Plano de proceso",
+      "kind": "custom",
+      "description": "Componente firma de tres hitos sobre un eje de intervencion.",
+      "html": "<div class=\"ds-process\"><span class=\"ds-axis\" aria-hidden=\"true\"></span><ol><li><a href=\"#\"><b>A</b><strong>Proceso actual</strong><small>Identificar la friccion</small></a></li><li><a href=\"#\"><b>B</b><strong>Intervencion</strong><small>Disenar lo necesario</small></a></li><li><a href=\"#\"><b>C</b><strong>Solicitar contacto</strong><small>Construir un resultado util</small></a></li></ol></div>",
+      "css": ".ds-process{position:relative;border:1px solid var(--color-rule,#aab8b2);background:rgb(237 240 235/.7);padding:2rem;color:var(--color-ink,#102720)}.ds-axis{position:absolute;top:4.7rem;right:3rem;left:3rem;height:2px;background:var(--color-plan,#0b6684)}.ds-process ol{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:0;padding:0;list-style:none}.ds-process a{display:grid;justify-items:start;color:inherit;text-decoration:none}.ds-process b{display:grid;width:2rem;height:2rem;place-items:center;border:2px solid var(--color-plan,#0b6684);background:var(--color-paper,#edf0eb);font-family:var(--font-display,'Saira Variable','Arial Narrow',sans-serif)}.ds-process strong{margin-top:3.5rem;font-family:var(--font-display,'Saira Variable','Arial Narrow',sans-serif);font-size:1.05rem}.ds-process small{margin-top:.35rem;color:var(--color-ink-muted,#40564f);font:400 .88rem/1.3 var(--font-body,'Source Sans 3 Variable',sans-serif)}.ds-process a:hover b,.ds-process a:focus-visible b{background:var(--color-plan,#0b6684);color:#fff}.ds-process a:focus-visible{outline:3px solid var(--color-mark,#bd452d);outline-offset:4px}"
+    },
+    {
+      "name": "Lamina de proyecto",
+      "kind": "card",
+      "description": "Caso demostrativo dispuesto como una lamina tecnica, no como tarjeta flotante.",
+      "html": "<article class=\"ds-project\"><header><span>PLANO P-01</span><em>Caso demostrativo</em><h3>Integracion operativa</h3><p>Distribucion regional</p></header><dl><div><dt>Problema</dt><dd>La informacion se replica entre herramientas.</dd></div><div><dt>Solucion</dt><dd>Una integracion pequena y observable.</dd></div><div><dt>Resultado ilustrativo</dt><dd>Un recorrido unico y legible.</dd></div></dl></article>",
+      "css": ".ds-project{display:grid;grid-template-columns:.78fr 1.22fr;gap:3rem;border-top:1px solid var(--color-ink,#102720);padding:2.5rem 0;color:var(--color-ink,#102720)}.ds-project header>span{font-family:var(--font-display,'Saira Variable','Arial Narrow',sans-serif);font-size:.78rem;font-weight:650;letter-spacing:.08em}.ds-project em{margin-left:.8rem;border:1px solid var(--color-mark,#bd452d);padding:.15rem .4rem;color:#8f2f1e;font:normal 700 .75rem var(--font-body,'Source Sans 3 Variable',sans-serif)}.ds-project h3{max-width:18ch;margin:1.2rem 0 .6rem;font-family:var(--font-display,'Saira Variable','Arial Narrow',sans-serif);font-size:2rem;font-weight:580;line-height:1}.ds-project p,.ds-project dd{color:var(--color-ink-muted,#40564f)}.ds-project dl{margin:0}.ds-project dl>div{display:grid;grid-template-columns:8rem 1fr;gap:1rem;border-bottom:1px solid var(--color-rule,#aab8b2);padding:1.2rem 0}.ds-project dt{font-family:var(--font-display,'Saira Variable','Arial Narrow',sans-serif);font-size:.82rem;font-weight:700;text-transform:uppercase}.ds-project dd{margin:0}.ds-project dl>div:last-child dd{color:var(--color-plan-dark,#07475e);font-weight:620}.ds-project:focus-within{outline:3px solid var(--color-mark,#bd452d);outline-offset:4px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Plano de intervencion",
+    "overview": "Taller Norte se presenta como un plano tecnico que permite leer una intervencion antes de ejecutarla. La composicion es editorial, precisa y deliberadamente sobria: reglas, coordenadas, tablas y ejes de proceso convierten el trabajo de software en algo concreto y examinable. La interfaz mantiene una densidad profesional sin sentirse burocratica. El papel verdoso y la tinta profunda aportan materialidad; el azul identifica recorridos y decisiones, mientras que el naranja actua como marca de correccion. Se evita la estetica generica de landing tecnologica, los gradientes decorativos, las tarjetas repetidas y las promesas visuales sin evidencia.",
+    "keyCharacteristics": [
+      "Reticula tecnica visible, divisores finos y alineaciones estrictas.",
+      "Jerarquia tipografica compacta y expresiva, con titulares angostos y cuerpo muy legible.",
+      "Superficies planas; el contraste tonal y la geometria crean profundidad.",
+      "Azul de plano para recorridos y naranja de correccion para foco, iconos y alertas.",
+      "Componentes rectangulares, tactiles y honestos, sin ornamento superfluo."
+    ],
+    "rules": [
+      { "name": "The Intervention Mark Rule", "body": "La marca naranja solo aparece donde una correccion, direccion o estado necesita atencion inmediata; su rareza preserva su fuerza.", "section": "colors" },
+      { "name": "The Paper-and-Ink Rule", "body": "Las superficies principales nacen del papel y la tinta; el azul organiza el recorrido, no sustituye la base neutral.", "section": "colors" },
+      { "name": "The Two-Instruments Rule", "body": "Saira rotula estructura y accion; Source Sans 3 explica. No agregar una tercera voz tipografica.", "section": "typography" },
+      { "name": "The Compressed-Headline Rule", "body": "Los titulares grandes usan interlineado cerrado y medida corta; el cuerpo recupera aire y longitud para sostener la lectura.", "section": "typography" },
+      { "name": "The Shared-Axis Rule", "body": "Cada bloque debe encontrar una linea, columna o coordenada comun; evitar islas flotantes sin relacion espacial.", "section": "layout" },
+      { "name": "The Flat-Plan Rule", "body": "Una superficie en reposo no se eleva; primero se resuelve con contraste, regla y posicion.", "section": "elevation" },
+      { "name": "The Sharp-Corner Rule", "body": "Los controles y contenedores mantienen radio cero. La expresividad viene de la proporcion, el color y la linea.", "section": "shapes" }
+    ],
+    "dos": [
+      "Do construir jerarquia mediante ejes compartidos, reglas de un pixel y contraste de papel/tinta.",
+      "Do reservar el azul para recorrido y estado, y el naranja para correcciones, foco e iconos direccionales.",
+      "Do usar Saira para estructura y Source Sans 3 para explicacion, respetando medidas de lectura controladas.",
+      "Do mantener objetivos tactiles amplios, foco visible y estados que funcionen sin hover.",
+      "Do identificar de forma inequivoca cualquier evidencia demostrativa."
+    ],
+    "donts": [
+      "Don't introducir gradientes decorativos, tarjetas repetitivas o heroes tecnologicos genericos.",
+      "Don't redondear controles y contenedores; el lenguaje formal es ortogonal.",
+      "Don't usar sombras como sustituto de una jerarquia espacial clara.",
+      "Don't saturar la pagina con la marca naranja ni usarla como fondo dominante.",
+      "Don't agregar insignias, adornos o promesas visuales que no aporten evidencia o direccion."
+    ]
+  }
+}

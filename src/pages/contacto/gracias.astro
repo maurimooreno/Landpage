@@ -1,0 +1,116 @@
+---
+import Footer from '../../components/layout/Footer.astro';
+import Header from '../../components/layout/Header.astro';
+import { contactEmail } from '../../data/contact';
+import { profile } from '../../data/profile';
+import { confirmationSeo } from '../../data/seo';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout metadata={confirmationSeo}>
+  <Header />
+  <main id="contenido" class="shell confirmation">
+    <div class="status-mark" aria-hidden="true">
+      <span></span>
+    </div>
+    <div>
+      <h1 data-confirmation-title>Estado de la solicitud</h1>
+      <p data-confirmation-message>
+        Esta página no confirma por sí sola un envío. Si llegaste después de completar el
+        formulario, la confirmación aparecerá al habilitar JavaScript.
+      </p>
+      <p class="promise">{profile.responsePromise}, por la vía que elegiste.</p>
+      <div class="actions">
+        <a href="/">Volver al inicio</a>
+        <a href={`mailto:${contactEmail}`}>Escribir por correo</a>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
+<script>
+  const accepted = sessionStorage.getItem('contact-accepted') === 'true';
+  const title = document.querySelector('[data-confirmation-title]');
+  const message = document.querySelector('[data-confirmation-message]');
+  if (accepted && title && message) {
+    title.textContent = 'Solicitud aceptada';
+    message.textContent =
+      'El servicio de contacto aceptó la solicitud y asumió su entrega. Todavía no significa que la empresa haya respondido.';
+    sessionStorage.removeItem('contact-accepted');
+  }
+</script>
+<style>
+  .confirmation {
+    display: grid;
+    min-height: 65svh;
+    grid-template-columns: minmax(12rem, 0.45fr) minmax(0, 1fr);
+    gap: clamp(2rem, 8vw, 9rem);
+    align-items: center;
+    padding-block: clamp(4rem, 9vw, 9rem);
+  }
+  .status-mark {
+    position: relative;
+    width: min(100%, 20rem);
+    aspect-ratio: 1;
+    border: 1px solid var(--color-rule);
+  }
+  .status-mark::before,
+  .status-mark::after,
+  .status-mark span {
+    position: absolute;
+    content: '';
+    background: var(--color-plan);
+  }
+  .status-mark::before {
+    top: 50%;
+    right: 10%;
+    left: 10%;
+    height: 2px;
+  }
+  .status-mark::after {
+    top: 10%;
+    bottom: 10%;
+    left: 50%;
+    width: 2px;
+  }
+  .status-mark span {
+    top: calc(50% - 0.65rem);
+    left: calc(50% - 0.65rem);
+    width: 1.3rem;
+    height: 1.3rem;
+    border: 0.35rem solid var(--color-paper);
+  }
+  h1 {
+    max-width: 12ch;
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 570;
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+  }
+  main p {
+    max-width: 56ch;
+    color: var(--color-ink-muted);
+    font-size: 1.12rem;
+  }
+  .promise {
+    color: var(--color-plan-dark);
+    font-weight: 700;
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+    margin-top: 2rem;
+    font-weight: 700;
+  }
+  @media (max-width: 47.99rem) {
+    .confirmation {
+      grid-template-columns: 1fr;
+    }
+    .status-mark {
+      width: 8rem;
+    }
+  }
+</style>

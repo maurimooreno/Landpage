@@ -24,3 +24,15 @@
 - Bypass actors: none.
 - Credential handling remained in-memory and no secret was recorded.
 - Status: T010 complete; closing verification remains assigned to T076-T077.
+
+## Closing verification — 2026-09-13
+
+- Ruleset identifier remains `23020403`; stable name `main-required-quality-gates`.
+- Enforcement is `active`, target type is `branch`, and the include condition is exactly
+  `refs/heads/main`.
+- A pull request is required.
+- Required checks are exactly `lint`, `format`, `build`, `tests`, `accessibility`, `performance`, and
+  `security`.
+- Bypass actors: zero.
+- The API credential was resolved in memory; no token or raw authenticated response was retained.
+- T076 passes. T077 still requires a feature pull request plus the controlled fail/revert proof.

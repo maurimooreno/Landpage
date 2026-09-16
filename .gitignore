@@ -16,6 +16,15 @@ test-results/
 
 # Local design tooling
 .impeccable-bin/
+.impeccable/live/
+.impeccable/review/
+.impeccable/build/
+.impeccable/mocks/
+
+# Local audits and temporary fixtures
+lhci_reports/
+blob-report/
+*.local.json
 
 # Editors and operating systems
 .DS_Store
